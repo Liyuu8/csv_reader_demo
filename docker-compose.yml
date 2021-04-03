@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  csv_reader:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: csv_reader
+    container_name: csv_reader
+    volumes:
+      - type: bind
+        source: ./src
+        target: /home/dev/src
+    stdin_open: true
+    tty: true
+    working_dir: /home/dev
